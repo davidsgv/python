@@ -1,0 +1,51 @@
+.table-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr repeat(minmax(50px, 60px));
+}
+
+.table {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.table div.center {
+    display: flex;
+    justify-content: center;
+}
+
+.table div.right {
+    display: flex;
+    justify-content: right;
+}
+
+.table img {
+    max-width: 40%;
+    align-self: center;
+}
+
+.table-header>div {
+    padding: 5px;
+    background-color: #d9ead3;
+    border: solid 0.5px #999;
+    text-align: center;
+    font-weight: 900;
+}
+
+.table-body div {
+    border: solid 0.5px #999;
+    padding: 10px;
+}
+
+.table-body .icons {
+    align-items: center;
+    display: flex;
+    justify-content: right;
+    gap: 20px;
+}
+
+.table-body .icons svg {
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+}
