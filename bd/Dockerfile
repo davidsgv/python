@@ -1,4 +1,4 @@
-from mysql
+FROM mysql
 
-copy ./model /docker-entrypoint-initdb.d/1.sql
-copy ./data /docker-entrypoint-initdb.d/2.sql
+COPY ./model.sql /docker-entrypoint-initdb.d/1.sql
+COPY ./data.sql /docker-entrypoint-initdb.d/2.sql
