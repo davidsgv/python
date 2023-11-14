@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {% if producto %}
+    <form action="{{url_for('app.producto_editar', id=producto[0])}}" method="post">
+        <div>
+            <div>
+                <label for="name">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" value="{{producto[1]}}" />
+            </div>
+            <div>
+                <label for="precio">Precio:</label>
+                <input type="text" id="precio" name="precio" value="{{producto[3]}}" />
+            </div>
+            <div>
+                <label for="imagen">Imagen:</label>
+                <input type="text" id="imagen" name="imagen" value="{{producto[2]}}" />
+            </div>
+        </div>
+        <button type="submit">Enviar</button>
+    </form>
+    {% else %}
+    <form action="{{url_for('app.producto_crear')}}" method="post">
+        <div>
+            <input type="text" name="id" hidden />
+            <div>
+                <label for="name">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" />
+            </div>
+            <div>
+                <label for="precio">Precio:</label>
+                <input type="text" id="precio" name="precio" />
+            </div>
+            <div>
+                <label for="imagen">Imagen:</label>
+                <input type="text" id="imagen" name="imagen" />
+            </div>
+        </div>
+        <button type="submit">Enviar</button>
+    </form>
+    {% endif %}
+    {% if messages %}
+    <ul class=flashes>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+
+</html>
